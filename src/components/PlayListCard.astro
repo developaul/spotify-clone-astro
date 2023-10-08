@@ -13,14 +13,31 @@ const allArtists = playList.artists.join(", ");
 <article
   class="bg-zinc-500/30 hover:bg-zinc-800 transition-all duration-500 rounded-md w-48"
 >
-  <a class="p-2 flex flex-col h-full gap-2" href={`/playlist/${playList.id}`}>
+  <a
+    transition:name={`playListBox-${playList.id}`}
+    class="p-2 flex flex-col h-full gap-2"
+    href={`/playlist/${playList.id}`}
+  >
     <picture>
-      <img class="rounded-md" src={playList.cover} alt={playList.title} />
+      <img
+        transition:name={`playListImage-${playList.id}`}
+        class="rounded-md"
+        src={playList.cover}
+        alt={playList.title}
+      />
     </picture>
 
     <div>
-      <h4 class="text-gray-200 text-base">{playList.title}</h4>
-      <span class="text-gray-500 text-sm">{allArtists}</span>
+      <h4
+        transition:name={`playListTitle-${playList.id}`}
+        class="text-gray-200 text-base"
+      >
+        {playList.title}
+      </h4>
+      <span
+        transition:name={`playListArtists-${playList.id}`}
+        class="text-gray-500 text-sm">{allArtists}</span
+      >
     </div>
   </a>
 </article>

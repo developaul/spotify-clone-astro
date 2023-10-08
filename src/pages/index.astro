@@ -3,22 +3,18 @@ import PlayListShortCard from "@/components/PlayListShortCard.astro";
 import PlayListCard from "@/components/PlayListCard.astro";
 import Layout from "@/layouts/Layout.astro";
 
-import { PlayerProvider } from "@/context";
-
 import { playlists } from "@/lib/data";
 import { getGreeting } from "@/utils";
 ---
 
-<PlayerProvider>
-	<Layout title="Home | Spotify">
-		<h2 class="text-4xl text-white font-semibold mb-8">{getGreeting()}</h2>
-		<section class="flex flex-wrap gap-4">
-			{playlists.map((playList) => <PlayListShortCard playList={playList} />)}
-		</section>
+<Layout title="Home | Spotify">
+	<h2 class="text-4xl text-white font-semibold mb-8">{getGreeting()}</h2>
+	<section class="flex flex-wrap gap-4">
+		{playlists.map((playList) => <PlayListShortCard playList={playList} />)}
+	</section>
 
-		<h3 class="text-3xl text-white font-semibold mb-8 mt-6">Made for you</h3>
-		<section class="flex flex-wrap gap-4">
-			{playlists.map((playList) => <PlayListCard playList={playList} />)}
-		</section>
-	</Layout>
-</PlayerProvider>
+	<h3 class="text-3xl text-white font-semibold mb-8 mt-6">Made for you</h3>
+	<section class="flex flex-wrap gap-4">
+		{playlists.map((playList) => <PlayListCard playList={playList} />)}
+	</section>
+</Layout>

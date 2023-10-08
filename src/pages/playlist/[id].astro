@@ -3,7 +3,6 @@ import Layout from "@/layouts/Layout.astro";
 import ArrowBack from "@/icons/ArrowBack.astro";
 import PlayListInfo from "@/components/playlist/PlayListInfo.astro";
 
-import { PlayerProvider } from "@/context";
 import { playlists } from "@/lib/data";
 
 export const getStaticPaths = async () =>
@@ -14,15 +13,13 @@ const { id } = Astro.params;
 const playList = playlists.find((playList) => playList.id === id);
 ---
 
-<PlayerProvider>
-  <Layout title="Home | Spotify">
-    <a
-      class="bg-zinc-950 hover:bg-black transition-all duration-300 w-8 h-8 p-2 flex items-center content-center rounded-full"
-      href="/"
-    >
-      <ArrowBack />
-    </a>
+<Layout title="Home | Spotify">
+  <a
+    class="bg-zinc-950 hover:bg-black transition-all duration-300 w-8 h-8 p-2 flex items-center content-center rounded-full"
+    href="/"
+  >
+    <ArrowBack />
+  </a>
 
-    <PlayListInfo playList={playList!} />
-  </Layout>
-</PlayerProvider>
+  <PlayListInfo playList={playList!} />
+</Layout>

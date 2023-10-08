@@ -9,15 +9,33 @@ const { playList } = Astro.props;
 const allArtists = playList.artists.join(", ");
 ---
 
-<article class="flex gap-8 items-end mt-8">
+<article
+  transition:name={`playListBox-${playList.id}`}
+  class="flex gap-8 items-end mt-8"
+>
   <picture class="shadow-2xl">
-    <img class="h-52" src={playList.cover} alt={playList.title} />
+    <img
+      transition:name={`playListImage-${playList.id}`}
+      class="h-52"
+      src={playList.cover}
+      alt={playList.title}
+    />
   </picture>
 
-  <div class='flex flex-col text-white'>
-    <span class='text-base mb-2' >Playlist</span>
-    <h4 class='text-6xl font-semibold mb-8'>{playList.title}</h4>
-    <span class='text-base mb-2' >{allArtists}</span>
-    <span class='text-base'><strong>5 canciones,</strong> 3h aproximadamente</span>
+  <div class="flex flex-col text-white">
+    <span class="text-base mb-2">Playlist</span>
+    <h4
+      transition:name={`playListTitle-${playList.id}`}
+      class="text-6xl font-semibold mb-8"
+    >
+      {playList.title}
+    </h4>
+    <span
+      transition:name={`playListArtists-${playList.id}`}
+      class="text-base mb-2">{allArtists}</span
+    >
+    <span class="text-base"
+      ><strong>5 canciones,</strong> 3h aproximadamente</span
+    >
   </div>
 </article>
