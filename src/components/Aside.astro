@@ -9,7 +9,7 @@ import LibraryIcon from "@/icons/Library.astro";
 import { playlists } from "@/lib/data";
 ---
 
-<div class="flex flex-col gap-2">
+<div class="flex flex-col gap-2 h-full">
 	<nav class="p-4 bg-zinc-900 rounded-md">
 		<ul class="flex flex-col gap-6">
 			<AsideMenuItem href="/">
@@ -24,7 +24,7 @@ import { playlists } from "@/lib/data";
 		</ul>
 	</nav>
 
-	<nav class="p-4 bg-zinc-900 rounded-md">
+	<nav class="p-4 bg-zinc-900 rounded-md flex-1">
 		<ul class="flex flex-col gap-4">
 			<AsideMenuItem href="/#">
 				<LibraryIcon />

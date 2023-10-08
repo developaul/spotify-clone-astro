@@ -1,0 +1,21 @@
+---
+import type { Playlist } from "@/lib/data";
+
+interface Props {
+  playList: Playlist;
+}
+
+const { playList } = Astro.props;
+---
+
+<article
+  class="bg-zinc-500/30 hover:bg-zinc-800 transition-all duration-500 rounded-md w-60"
+>
+  <a class="flex w-full gap-2 items-center" href={`/playlist/${playList.id}`}>
+    <picture class="w-20">
+      <img class="rounded-l-md" src={playList.cover} alt={playList.title} />
+    </picture>
+
+    <h4 class="text-gray-200 text-base">{playList.title}</h4>
+  </a>
+</article>
